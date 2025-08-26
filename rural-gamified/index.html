@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Rural Learning Quest</title>
+		<link rel="manifest" href="./manifest.webmanifest" />
+		<link rel="stylesheet" href="./assets/styles.css" />
+	</head>
+	<body>
+		<header class="app-header">
+			<h1 id="appTitle" data-i18n="app_title">Rural Learning Quest</h1>
+			<div class="header-right">
+				<button id="installBtn" class="secondary" data-i18n="install_app">Install</button>
+			</div>
+		</header>
+
+		<main class="container">
+			<section class="panel" id="setupPanel">
+				<h2 data-i18n="get_started">Get Started</h2>
+				<div class="grid-3">
+					<div class="form-control">
+						<label for="languageSelect" data-i18n="select_language">Language</label>
+						<select id="languageSelect">
+							<option value="en">English</option>
+							<option value="hi">हिन्दी</option>
+						</select>
+					</div>
+					<div class="form-control">
+						<label for="gradeSelect" data-i18n="select_grade">Grade</label>
+						<select id="gradeSelect"></select>
+					</div>
+					<div class="form-control">
+						<label for="subjectSelect" data-i18n="select_subject">Subject</label>
+						<select id="subjectSelect">
+							<option value="math" data-i18n="subject_math">Math</option>
+							<option value="science" data-i18n="subject_science">Science</option>
+							<option value="english" data-i18n="subject_english">English</option>
+						</select>
+					</div>
+				</div>
+				<div class="actions">
+					<button id="startBtn" class="primary" data-i18n="start_quiz">Start Quiz</button>
+				</div>
+			</section>
+
+			<section class="panel" id="statsPanel">
+				<div class="stats">
+					<div class="stat"><span data-i18n="xp">XP</span>: <strong id="xpValue">0</strong></div>
+					<div class="stat"><span data-i18n="level">Level</span>: <strong id="levelValue">1</strong></div>
+					<div class="stat"><span data-i18n="streak">Streak</span>: <strong id="streakValue">0</strong></div>
+					<div class="stat"><span data-i18n="lives">Lives</span>: <strong id="livesValue">❤️❤️❤️</strong></div>
+				</div>
+			</section>
+
+			<section class="panel hidden" id="quizPanel">
+				<div class="quiz-header">
+					<div id="quizMeta"></div>
+					<div class="progress">
+						<div id="progressBar" class="progress-bar" style="width: 0%"></div>
+					</div>
+				</div>
+				<div id="questionText" class="question">—</div>
+				<div id="optionsContainer" class="options"></div>
+				<div class="actions">
+					<button id="submitBtn" class="primary" data-i18n="submit">Submit</button>
+					<button id="nextBtn" class="secondary" data-i18n="next_question">Next</button>
+				</div>
+				<div id="feedback" class="feedback"></div>
+			</section>
+
+			<section class="panel hidden" id="resultPanel">
+				<h2 data-i18n="results">Results</h2>
+				<p id="resultSummary"></p>
+				<div id="badgesContainer" class="badges"></div>
+				<div class="actions">
+					<button id="restartBtn" class="primary" data-i18n="restart">Restart</button>
+				</div>
+			</section>
+		</main>
+
+		<footer class="app-footer">
+			<small>&copy; <span id="year"></span> <span data-i18n="footer">Made for rural education with love.</span></small>
+		</footer>
+
+		<script src="./app.js" defer></script>
+	</body>
+</html>
